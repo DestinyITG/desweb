@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>毛泽东诗词 · 新中国成立以前</title>
+  <meta name="description" content="收录新中国成立以前（1910—1949）毛泽东诗词二十首，按时间索引，附创作时代背景与心境。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- 动态背景画布层（首页山水） -->
+  <div class="site-bg" aria-hidden="true">
+    <div class="site-bg__mountains"></div>
+    <div class="site-bg__mist"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="#/" class="brand" data-nav="home">
+        <span class="brand__seal">毛</span>
+        <span class="brand__text">
+          <span class="brand__title">毛泽东诗词</span>
+          <span class="brand__sub">新中国成立以前 · 1910 — 1949</span>
+        </span>
+      </a>
+      <nav class="site-nav">
+        <a href="#/index/" data-nav="index">目录索引</a>
+        <a href="#/timeline/" data-nav="timeline">时间线</a>
+        <a href="#/about/" data-nav="about">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="view" class="view">
+
+    <!-- ============ 首页 ============ -->
+    <section class="page page--home" data-page="home">
+      <div class="hero">
+        <div class="hero__seal">诗</div>
+        <h1 class="hero__title">毛泽东诗词</h1>
+        <p class="hero__sub">新中国成立以前 · 1910 — 1949</p>
+        <p class="hero__desc">
+          二十首诗与词，自少年出乡关到百万雄师过大江。<br />
+          按目录索引或创作年份，于时代背景与心境中，读其诗、知其人、明其时。
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#/index/">进入目录索引</a>
+          <a class="btn btn--ghost" href="#/timeline/">按时间线浏览</a>
+        </div>
+      </div>
+
+      <div class="featured">
+        <h2 class="section-title">精选三首</h2>
+        <div class="featured__grid" id="featured-grid"><!-- JS 注入 --></div>
+      </div>
+    </section>
+
+    <!-- ============ 目录索引 ============ -->
+    <section class="page page--index" data-page="index" hidden>
+      <h2 class="page-title">目录索引</h2>
+      <p class="page-sub">按创作时间排列，可按词牌/体裁筛选，点击卡片进入诗词全文与时代背景。</p>
+
+      <div class="filters">
+        <label class="filters__label">体裁筛选：</label>
+        <div class="filters__chips" id="filter-chips"><!-- JS 注入 --></div>
+        <div class="filters__search">
+          <input type="search" id="search-input" placeholder="搜索诗题、年份、地点…" />
+        </div>
+      </div>
+
+      <ol class="poem-list" id="poem-list"><!-- JS 注入 --></ol>
+      <p class="empty-tip" id="empty-tip" hidden>未找到匹配的诗词。</p>
+    </section>
+
+    <!-- ============ 时间线 ============ -->
+    <section class="page page--timeline" data-page="timeline" hidden>
+      <h2 class="page-title">创作时间线</h2>
+      <p class="page-sub">从韶山出乡，到金陵易帜；三十年间，诗史互证。</p>
+      <div class="timeline" id="timeline"><!-- JS 注入 --></div>
+    </section>
+
+    <!-- ============ 关于 ============ -->
+    <section class="page page--about" data-page="about" hidden>
+      <h2 class="page-title">关于本站</h2>
+      <div class="prose">
+        <p>本站收录毛泽东自 1910 年《改诗赠父亲》至 1949 年《人民解放军占领南京》之间的诗、词共二十首，覆盖求学、大革命、土地革命、长征、抗战与解放战争等重大历史阶段。</p>
+        <p>每首诗词除原文外，另附<strong>创作时代背景</strong>与<strong>创作心境</strong>，力求让读者于诗中见史、于史中见人。背景动效依诗词意境取雪、秋、江、山、红旗、战火、雨七类，以求身临其境。</p>
+        <p>本站为学习欣赏用途，诗词文本以通行版本为据，时代背景为综合整理。</p>
+      </div>
+    </section>
+
+    <!-- ============ 诗词详情（容器，由 JS 注入整页） ============ -->
+    <section class="page page--poem" data-page="poem" hidden>
+      <!-- 详情视图由 app.js 渲染到此容器 -->
+      <div id="poem-detail"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span>毛泽东诗词 · 新中国成立以前</span>
+      <span class="site-footer__note">学习欣赏 · 诗史互证</span>
+    </div>
+  </footer>
+
+  <!-- 详情视图动态背景层 -->
+  <div class="poem-bg" id="poem-bg" aria-hidden="true"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
